@@ -21,7 +21,7 @@ export default function MobileQuickBar({ onOpenAppointment }) {
         {/* Action Buttons */}
         <div className="quick-bar-actions">
           <a
-            href={businessConfig.googleMapsUrl}
+            href={businessConfig.maps.directionsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-quick-directions"
