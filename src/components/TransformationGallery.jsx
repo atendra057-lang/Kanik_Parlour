@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Sparkles, SlidersHorizontal, AlertCircle, ArrowLeftRight, Settings } from 'lucide-react';
+import { Sparkles, SlidersHorizontal, AlertCircle, ArrowLeftRight } from 'lucide-react';
 import './TransformationGallery.css';
 
 export default function TransformationGallery({
   transformations,
-  onOpenOwnerManager,
   onOpenAppointment
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -222,24 +221,6 @@ export default function TransformationGallery({
             </p>
           </div>
         )}
-
-        {/* Owner Management Gateway Bar */}
-        <div className="owner-gallery-portal-bar">
-          <div className="owner-portal-info">
-            <Settings size={18} className="owner-portal-icon" aria-hidden="true" />
-            <div>
-              <strong>Salon Owner Image Management:</strong>
-              <span> Ready to upload genuine client photos? Access the upload and backend integration interface.</span>
-            </div>
-          </div>
-          <button
-            type="button"
-            className="btn btn-outline-white btn-sm"
-            onClick={onOpenOwnerManager}
-          >
-            <span>Owner Portal / Setup</span>
-          </button>
-        </div>
       </div>
     </section>
   );

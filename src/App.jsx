@@ -61,7 +61,6 @@ export default function App() {
         {/* 7. Interactive Before-and-After Transformation Gallery */}
         <TransformationGallery
           transformations={transformations}
-          onOpenOwnerManager={() => setIsOwnerManagerOpen(true)}
           onOpenAppointment={handleOpenAppointment}
         />
 

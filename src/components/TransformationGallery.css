@@ -252,33 +252,6 @@
   color: var(--text-secondary);
 }
 
-/* Owner Portal Gateway Bar */
-.owner-gallery-portal-bar {
-  margin-top: 3.5rem;
-  background-color: var(--bg-dark-accent);
-  color: var(--text-inverse);
-  padding: 1.25rem 1.75rem;
-  border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.owner-portal-info {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-.owner-portal-icon {
-  color: var(--accent-champagne);
-  flex-shrink: 0;
-}
-
 @media (max-width: 768px) {
   .slider-meta {
     flex-direction: column;
@@ -288,15 +261,6 @@
   .slider-meta-right {
     width: 100%;
     justify-content: space-between;
-  }
-  .owner-gallery-portal-bar {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-  .owner-portal-info {
-    flex-direction: column;
-    text-align: center;
   }
 }
 
@@ -363,10 +327,5 @@
 
   .slider-hint {
     justify-content: center;
-  }
-
-  .owner-gallery-portal-bar .btn {
-    width: 100%;
-    min-height: 44px;
   }
 }
