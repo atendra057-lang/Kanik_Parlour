@@ -68,6 +68,7 @@
   letter-spacing: 0.02em;
   position: relative;
   padding: 0.5rem 0;
+  white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
@@ -100,6 +101,7 @@
 .btn-appointment {
   padding: 0.65rem 1.35rem;
   font-size: 0.84rem;
+  min-height: 44px;
 }
 
 .mobile-menu-toggle {
@@ -107,13 +109,19 @@
   color: var(--text-primary);
   padding: 0.5rem;
   border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:active {
+  background-color: var(--bg-secondary);
 }
 
 /* Mobile Drawer */
 .mobile-menu-drawer {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 900;
   visibility: hidden;
   transition: visibility var(--transition-normal);
 }
@@ -165,9 +173,18 @@
 .mobile-close-btn {
   padding: 0.5rem;
   color: var(--text-secondary);
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
 }
 
-.mobile-close-btn:hover {
+.mobile-close-btn:hover,
+.mobile-close-btn:active {
+  background-color: var(--bg-secondary);
   color: var(--text-primary);
 }
 
@@ -223,7 +240,7 @@
   margin-top: 0.25rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .desktop-nav {
     display: none;
   }
@@ -257,7 +274,7 @@
   .btn-appointment {
     padding: 0.5rem 0.85rem;
     font-size: 0.78rem;
-    min-height: 40px;
+    min-height: 44px;
   }
 
   .btn-appointment span {
@@ -271,6 +288,6 @@
 
   .mobile-menu-panel {
     width: 88vw;
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 1.25rem calc(1.75rem + env(safe-area-inset-bottom, 0px)) 1.25rem;
   }
 }

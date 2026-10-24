@@ -222,9 +222,11 @@
     max-width: 100%;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-    padding: 0.35rem 0.5rem;
+    padding: 0.35rem 1.25rem 0.35rem 0.5rem;
     justify-content: flex-start;
     border-radius: var(--radius-full);
+    gap: 0.35rem;
+    scroll-padding-right: 1.25rem;
   }
 
   .services-category-tabs::-webkit-scrollbar {
@@ -263,5 +265,17 @@
   .services-custom-banner .btn {
     width: 100%;
     min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-top {
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: baseline;
+  }
+
+  .service-card-title {
+    font-size: 1.25rem;
   }
 }

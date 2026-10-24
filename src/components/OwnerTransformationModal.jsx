@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Upload, Check, AlertTriangle, Shield, Image, Trash2 } from 'lucide-react';
 import './OwnerTransformationModal.css';
 
@@ -17,6 +17,27 @@ export default function OwnerTransformationModal({ isOpen, onClose, onAddTransfo
   const [previewAfter, setPreviewAfter] = useState(null);
   const [testSliderPosition, setTestSliderPosition] = useState(50);
   const [statusMessage, setStatusMessage] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isOpen) return;
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 

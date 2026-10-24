@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Menu, X, Calendar } from 'lucide-react';
 import { businessConfig } from '../config/businessConfig';
 import './Navbar.css';
@@ -102,66 +103,70 @@ export default function Navbar({ onOpenAppointment }) {
         </div>
       </div>
 
-      {/* Accessible Mobile Drawer Navigation */}
-      <div
-        id="mobile-navigation"
-        ref={mobileMenuRef}
-        className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}
-        aria-hidden={!isMobileMenuOpen}
-      >
-        <div className="mobile-menu-backdrop" onClick={closeMobileMenu} aria-hidden="true" />
-        <div className="mobile-menu-panel">
-          <div className="mobile-menu-header">
-            <div className="brand-wordmark">
-              <span className="brand-name">Kanik</span>
-              <span className="brand-subtitle">BEAUTY PARLOUR</span>
+      {/* Accessible Mobile Drawer Navigation portaled to document.body */}
+      {typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            id="mobile-navigation"
+            ref={mobileMenuRef}
+            className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}
+            aria-hidden={!isMobileMenuOpen}
+          >
+            <div className="mobile-menu-backdrop" onClick={closeMobileMenu} aria-hidden="true" />
+            <div className="mobile-menu-panel">
+              <div className="mobile-menu-header">
+                <div className="brand-wordmark">
+                  <span className="brand-name">Kanik</span>
+                  <span className="brand-subtitle">BEAUTY PARLOUR</span>
+                </div>
+                <button
+                  type="button"
+                  className="mobile-close-btn"
+                  onClick={closeMobileMenu}
+                  aria-label="Close menu"
+                >
+                  <X size={22} />
+                </button>
+              </div>
+
+              <nav className="mobile-nav" aria-label="Mobile Navigation">
+                <ul className="mobile-nav-list">
+                  {navLinks.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="mobile-nav-link"
+                        onClick={closeMobileMenu}
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <div className="mobile-menu-footer">
+                <button
+                  type="button"
+                  className="btn btn-primary w-full"
+                  onClick={() => {
+                    closeMobileMenu();
+                    onOpenAppointment();
+                  }}
+                >
+                  <Calendar size={16} aria-hidden="true" />
+                  <span>Book an Appointment</span>
+                </button>
+
+                <div className="mobile-info">
+                  <p className="mobile-address">{businessConfig.address.fullFormatted}</p>
+                  <p className="mobile-hours">Mon–Sat: 9:00 AM – 9:00 PM</p>
+                </div>
+              </div>
             </div>
-            <button
-              type="button"
-              className="mobile-close-btn"
-              onClick={closeMobileMenu}
-              aria-label="Close menu"
-            >
-              <X size={22} />
-            </button>
-          </div>
-
-          <nav className="mobile-nav" aria-label="Mobile Navigation">
-            <ul className="mobile-nav-list">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="mobile-nav-link"
-                    onClick={closeMobileMenu}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="mobile-menu-footer">
-            <button
-              type="button"
-              className="btn btn-primary w-full"
-              onClick={() => {
-                closeMobileMenu();
-                onOpenAppointment();
-              }}
-            >
-              <Calendar size={16} aria-hidden="true" />
-              <span>Book an Appointment</span>
-            </button>
-
-            <div className="mobile-info">
-              <p className="mobile-address">{businessConfig.address.fullFormatted}</p>
-              <p className="mobile-hours">Mon–Sat: 9:00 AM – 9:00 PM</p>
-            </div>
-          </div>
-        </div>
-      </div>
+          </div>,
+          document.body
+        )}
     </header>
   );
 }

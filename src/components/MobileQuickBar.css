@@ -9,7 +9,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 40;
+  z-index: 50;
   background-color: rgba(255, 253, 251, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -118,5 +118,33 @@
 @media (max-width: 768px) {
   .mobile-quick-bar {
     display: block;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-quick-bar {
+    padding: 0.45rem 0.5rem calc(0.45rem + env(safe-area-inset-bottom, 0px)) 0.5rem;
+  }
+  .mobile-quick-bar-inner {
+    gap: 0.35rem;
+  }
+  .quick-bar-status {
+    padding: 0.25rem 0.45rem;
+    font-size: 0.65rem;
+    gap: 0.25rem;
+  }
+  .quick-bar-actions {
+    gap: 0.35rem;
+  }
+  .btn-quick-directions {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.725rem;
+    gap: 0.25rem;
+    min-width: 38px;
+  }
+  .btn-quick-book {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.76rem;
+    gap: 0.25rem;
   }
 }

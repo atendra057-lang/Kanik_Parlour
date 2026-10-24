@@ -384,7 +384,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '' 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn btn-primary btn-lg w-full"
+                  className="btn btn-primary btn-lg btn-submit-appointment w-full"
                 >
                   <MessageCircle size={16} aria-hidden="true" />
                   <span>{isSubmitting ? 'Validating...' : 'Submit Appointment Enquiry'}</span>

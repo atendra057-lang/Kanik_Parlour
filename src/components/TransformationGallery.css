@@ -300,10 +300,39 @@
   }
 }
 
+@media (max-width: 600px) {
+  .authenticity-badge {
+    border-radius: var(--radius-md);
+    align-items: flex-start;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .authenticity-badge svg {
+    margin-top: 2px;
+  }
+}
+
 @media (max-width: 540px) {
   .comparison-stage {
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-lg);
+  }
+
+  .comparison-tag {
+    top: 12px;
+    padding: 0.25rem 0.55rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+  }
+
+  .tag-before {
+    left: 12px;
+  }
+
+  .tag-after {
+    right: 12px;
   }
 
   .slider-handle {
@@ -334,5 +363,10 @@
 
   .slider-hint {
     justify-content: center;
+  }
+
+  .owner-gallery-portal-bar .btn {
+    width: 100%;
+    min-height: 44px;
   }
 }

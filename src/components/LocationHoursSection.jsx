@@ -89,14 +89,18 @@ export default function LocationHoursSection() {
 
                 <ul className="hours-schedule-list" aria-label="Daily operating schedule">
                   <li className={`schedule-item ${!isSunday ? 'active-today' : ''}`}>
-                    <span className="schedule-days">Monday – Saturday</span>
+                    <div className="schedule-day-group">
+                      <span className="schedule-days">Monday – Saturday</span>
+                      {!isSunday && <span className="today-badge">Today</span>}
+                    </div>
                     <span className="schedule-time">9:00 AM – 9:00 PM</span>
-                    {!isSunday && <span className="today-badge">Today</span>}
                   </li>
                   <li className={`schedule-item ${isSunday ? 'active-today' : ''}`}>
-                    <span className="schedule-days">Sunday</span>
+                    <div className="schedule-day-group">
+                      <span className="schedule-days">Sunday</span>
+                      {isSunday && <span className="today-badge">Today</span>}
+                    </div>
                     <span className="schedule-time">9:00 AM – 6:00 PM</span>
-                    {isSunday && <span className="today-badge">Today</span>}
                   </li>
                 </ul>
 
