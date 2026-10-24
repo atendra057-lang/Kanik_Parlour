@@ -1,0 +1,115 @@
+.consultation-section {
+  padding-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  background-color: var(--bg-primary);
+}
+
+.consultation-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.consultation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+}
+
+.consultation-image-wrapper {
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+}
+
+.consultation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.consultation-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(48, 38, 37, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--accent-champagne);
+  font-size: 0.775rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(198, 163, 106, 0.4);
+}
+
+.consultation-content {
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.consultation-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.2vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.consultation-heading-accent {
+  font-style: italic;
+  color: var(--accent-deep);
+}
+
+.consultation-desc {
+  font-size: clamp(0.95rem, 1.8vw, 1.075rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.consultation-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.25rem;
+}
+
+.consultation-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.925rem;
+  color: var(--text-primary);
+}
+
+.consultation-check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--accent-deep);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .consultation-grid {
+    grid-template-columns: 1fr;
+  }
+  .consultation-image-wrapper {
+    min-height: 320px;
+  }
+}

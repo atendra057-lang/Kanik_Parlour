@@ -1,0 +1,109 @@
+.checklist-modal-container {
+  max-width: 620px;
+}
+
+.checklist-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.checklist-row {
+  display: flex;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  align-items: flex-start;
+  transition: all var(--transition-fast);
+}
+
+.checklist-row:hover {
+  background-color: #FFFFFF;
+  border-color: var(--accent-primary);
+}
+
+.checklist-row-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  color: var(--accent-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checklist-row-content {
+  flex: 1;
+}
+
+.checklist-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.checklist-row-header h4 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.checklist-status-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.checklist-status-badge.ready {
+  background-color: #EDF7EE;
+  color: #2E6B34;
+  border: 1px solid #C8E6C9;
+}
+
+.checklist-status-badge.pending {
+  background-color: #FFF3E0;
+  color: #B26A28;
+  border: 1px solid #FFE0B2;
+}
+
+.checklist-row-content p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.checklist-footer-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.checklist-footer-note svg {
+  color: var(--accent-deep);
+  flex-shrink: 0;
+}
+
+.checklist-footer-note code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+}

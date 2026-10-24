@@ -1,0 +1,13 @@
+/* App-level layout wrapper */
+.site-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+}
+
+#main-content {
+  flex: 1;
+}
