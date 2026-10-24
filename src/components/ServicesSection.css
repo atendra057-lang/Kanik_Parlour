@@ -11,8 +11,8 @@
   margin-top: 1.75rem;
   border: 1px solid var(--border-color);
   gap: 0.25rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  max-width: 100%;
 }
 
 .category-tab-btn {
@@ -22,6 +22,9 @@
   border-radius: var(--radius-full);
   color: var(--text-secondary);
   transition: all var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .category-tab-btn:hover {
@@ -217,16 +220,15 @@
 
 @media (max-width: 640px) {
   .services-category-tabs {
-    display: flex;
+    display: inline-flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
     max-width: 100%;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-    padding: 0.35rem 1.25rem 0.35rem 0.5rem;
-    justify-content: flex-start;
+    padding: 0.3rem 0.5rem;
     border-radius: var(--radius-full);
-    gap: 0.35rem;
-    scroll-padding-right: 1.25rem;
+    gap: 0.25rem;
   }
 
   .services-category-tabs::-webkit-scrollbar {
@@ -236,9 +238,9 @@
   .category-tab-btn {
     white-space: nowrap;
     flex-shrink: 0;
-    min-height: 44px;
-    padding: 0.6rem 1.15rem;
-    font-size: 0.85rem;
+    min-height: 40px;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.8rem;
   }
 
   .services-grid {
@@ -277,5 +279,12 @@
 
   .service-card-title {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .category-tab-btn {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.76rem;
   }
 }
