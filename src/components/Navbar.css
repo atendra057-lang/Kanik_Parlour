@@ -229,5 +229,48 @@
   }
   .mobile-menu-toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 540px) {
+  .header-inner {
+    height: 68px;
+  }
+
+  .brand-name {
+    font-size: 1.6rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .btn-appointment {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.78rem;
+    min-height: 40px;
+  }
+
+  .btn-appointment span {
+    display: none;
+  }
+
+  .btn-appointment::after {
+    content: 'Book';
+    display: inline;
+  }
+
+  .mobile-menu-panel {
+    width: 88vw;
+    padding: 1.5rem 1.25rem;
   }
 }

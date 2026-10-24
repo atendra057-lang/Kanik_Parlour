@@ -1,0 +1,122 @@
+/* ==========================================================================
+   MOBILE QUICK BAR — FIXED BOTTOM BAR FOR PHONE VIEW
+   Provides effortless, one-tap mobile access to Bookings & Directions
+   ========================================================================== */
+
+.mobile-quick-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: rgba(255, 253, 251, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(232, 221, 213, 0.85);
+  box-shadow: 0 -4px 20px rgba(48, 38, 37, 0.08);
+  padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px)) 1rem;
+  transition: transform var(--transition-normal);
+}
+
+.mobile-quick-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.quick-bar-status {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.status-dot.open {
+  background-color: #388E3C;
+  box-shadow: 0 0 6px rgba(56, 142, 60, 0.5);
+}
+
+.status-dot.closed {
+  background-color: #B26A28;
+}
+
+.quick-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.btn-quick-directions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.9rem;
+  background-color: var(--bg-primary);
+  color: var(--accent-deep);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+  transition: all var(--transition-fast);
+}
+
+.btn-quick-directions:active {
+  background-color: var(--bg-secondary);
+  transform: scale(0.97);
+}
+
+.btn-quick-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.25rem;
+  background-color: var(--accent-deep);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-deep);
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+  min-height: 44px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(134, 77, 87, 0.28);
+  transition: all var(--transition-fast);
+  flex: 1;
+  max-width: 200px;
+}
+
+.btn-quick-book:active {
+  background-color: var(--accent-deep-hover);
+  transform: scale(0.97);
+}
+
+/* Display only on mobile devices */
+@media (max-width: 768px) {
+  .mobile-quick-bar {
+    display: block;
+  }
+}

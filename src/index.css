@@ -100,6 +100,11 @@ a {
   transition: color var(--transition-fast);
 }
 
+a, button, input, select, textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 button {
   cursor: pointer;
   background: none;

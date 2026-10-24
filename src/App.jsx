@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import AppointmentModal from './components/AppointmentModal';
 import OwnerTransformationModal from './components/OwnerTransformationModal';
 import OwnerChecklistModal from './components/OwnerChecklistModal';
+import MobileQuickBar from './components/MobileQuickBar';
 import { initialTransformationsData } from './data/transformationsData';
 import './App.css';
 
@@ -76,6 +77,9 @@ export default function App() {
         onOpenAppointment={() => handleOpenAppointment()}
         onOpenChecklist={() => setIsChecklistOpen(true)}
       />
+
+      {/* 11. Sticky Mobile Quick Action Bar (Phone Viewport) */}
+      <MobileQuickBar onOpenAppointment={() => handleOpenAppointment()} />
 
       {/* Interactive Modal Overlays */}
       <AppointmentModal

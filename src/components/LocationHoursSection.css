@@ -260,11 +260,42 @@
 @media (max-width: 900px) {
   .location-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   .location-card {
     flex-direction: column;
   }
   .map-frame-wrapper {
     min-height: 350px;
+  }
+}
+
+@media (max-width: 540px) {
+  .location-card {
+    padding: 1.25rem;
+  }
+
+  .address-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .address-actions .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  .schedule-item {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .map-frame-wrapper {
+    min-height: 300px;
+  }
+
+  .location-iframe {
+    min-height: 250px;
   }
 }

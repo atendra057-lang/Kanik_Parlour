@@ -155,6 +155,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '' 
         aria-modal="true"
         aria-labelledby="appointment-modal-title"
       >
+        <div className="mobile-sheet-drag-handle" aria-hidden="true" />
         <div className="modal-header">
           <div>
             <span className="modal-eyebrow">ENQUIRY &amp; BOOKING</span>

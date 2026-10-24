@@ -216,15 +216,52 @@
 }
 
 @media (max-width: 640px) {
+  .services-category-tabs {
+    display: flex;
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.35rem 0.5rem;
+    justify-content: flex-start;
+    border-radius: var(--radius-full);
+  }
+
+  .services-category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-height: 44px;
+    padding: 0.6rem 1.15rem;
+    font-size: 0.85rem;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.25rem;
   }
+
+  .service-card-body {
+    padding: 1.25rem;
+  }
+
+  .service-enquire-btn {
+    min-height: 44px;
+  }
+
   .services-custom-banner {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: 1.25rem;
+    padding: 1.5rem 1.25rem;
   }
+
   .services-custom-banner .btn {
     width: 100%;
+    min-height: 48px;
   }
 }
