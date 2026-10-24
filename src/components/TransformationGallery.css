@@ -116,28 +116,33 @@
 
 .comparison-tag {
   position: absolute;
-  top: 18px;
-  padding: 0.35rem 0.85rem;
+  top: 14px;
+  padding: 0.22rem 0.65rem;
   border-radius: var(--radius-full);
-  font-size: 0.725rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 5;
+  z-index: 12;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .tag-before {
-  left: 18px;
-  background-color: rgba(48, 38, 37, 0.85);
+  left: 14px;
+  background-color: rgba(48, 38, 37, 0.88);
   color: #FAF6F1;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .tag-after {
-  right: 18px;
-  background-color: rgba(134, 77, 87, 0.88);
+  right: 14px;
+  background-color: rgba(134, 77, 87, 0.9);
   color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 /* Divider & Handle */
@@ -285,18 +290,18 @@
   }
 
   .comparison-tag {
-    top: 12px;
-    padding: 0.25rem 0.55rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.04em;
+    top: 10px;
+    padding: 0.18rem 0.48rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.03em;
   }
 
   .tag-before {
-    left: 12px;
+    left: 10px;
   }
 
   .tag-after {
-    right: 12px;
+    right: 10px;
   }
 
   .slider-handle {

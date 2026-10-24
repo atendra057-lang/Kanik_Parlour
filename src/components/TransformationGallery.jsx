@@ -151,9 +151,6 @@ export default function TransformationGallery({
                     className="slider-image"
                     draggable="false"
                   />
-                  <span className="comparison-tag tag-after">
-                    {activeTransformation.afterLabel || 'After'}
-                  </span>
                 </div>
 
                 {/* Before Image (Clipped Overlay Canvas) */}
@@ -167,10 +164,15 @@ export default function TransformationGallery({
                     className="slider-image"
                     draggable="false"
                   />
-                  <span className="comparison-tag tag-before">
-                    {activeTransformation.beforeLabel || 'Before'}
-                  </span>
                 </div>
+
+                {/* Persistent Comparison Tags — Always Visible */}
+                <span className="comparison-tag tag-before">
+                  {activeTransformation.beforeLabel || 'Before'}
+                </span>
+                <span className="comparison-tag tag-after">
+                  {activeTransformation.afterLabel || 'After'}
+                </span>
 
                 {/* Vertical Divider & Draggable Handle */}
                 <div
